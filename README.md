@@ -2,12 +2,12 @@
 ==============================
 
 ## Table of Contents
-### [I. contributors](#contributors)
-### [II. Description](#description)
-### [III. Project Overview](#project-overview)
+### [I. Contributors](#Contributors)
+### [II. Description](#Description)
+### [III. Project Overview](#Project-Overview)
 #### --[User authentication](#User-authentication)
 #### --[Central Dashboard](#Central-Dashboard)
-#### --[Add Workout/Meal Modal](#Add-Workout/Meal-Modal)
+#### --[Workout & Meal Modal](#Workout-&-Meal-Modal)
 #### --[Calendar](#Calendar)
 #### --[Nav Bar](#Nav-Bar)
 #### --[Profile Page](#Profile-Page)
@@ -18,7 +18,7 @@
 ### [VIII. Workflow and Key lessons](#Workflow-lessons)
 ### [IX. MISC](#MISC)
 
-### I. contributors
+### I. Contributors
   #### Agnese Castellucci
   #### Andrew Feng
   #### Anthony Chen
@@ -37,7 +37,7 @@
 #### Central Dashboard:
   The user will be able to see their workouts and meals for the day. From this dashboard, they can also access the add workout or add meal modals.
 
-#### Add Workout/Meal Modal:
+#### Workout & Meal Modal:
   The user will be able to see their workouts and meals for the day. From this dashboard, they can also access the add workout or add meal modals.
 
 #### Calendar:
