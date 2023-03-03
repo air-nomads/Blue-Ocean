@@ -11,7 +11,7 @@
 #### --[Calendar](#Calendar)
 #### --[Nav Bar](#Nav-Bar)
 #### --[Profile Page](#Profile-Page)
-### [IV. Tech stack](#Tech-stack)
+### [IV. Tech stack](#user-content-iv-tech-stack-1)
 ### [V. Challenges](#Challenges)
 ### [VI. Demo](#Demo)
 ### [VII. Interactions](#Interactions)
