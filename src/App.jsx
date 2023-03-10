@@ -15,8 +15,11 @@ import Box from "@mui/material/Box";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import TabPanel from "@mui/material/Button";
-
+import Switch from '@mui/material/Switch';
+import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
+// import { ThemeProvider } from '@material-ui/core/styles';
 import "./css/App.css";
+
 
 function App() {
   const [count, setCount] = useState(0);
@@ -41,17 +44,41 @@ function App() {
     });
   }, []);
 
+  const [darkMode, setDarkMode] = useState(false);
+  const theme = createTheme({
+    palette: {
+      mode: darkMode ? 'dark' : 'light',
+      primary: {
+        main: '#3f51b5',
+      },
+      secondary: {
+        main: '#f50057',
+      },
+    },
+    // other properties as needed
+  });
+  const ThemeToggle = () => {
+
+    const toggleTheme = () => {
+      setDarkMode(!darkMode);
+    };
+
+    return (
+      <Switch checked={darkMode} onChange={toggleTheme} />
+    );
+  };
+
   const currDateInt = Number(format(new Date(currentDay), "yyyyMMdd"));
   // console.log(currDateInt);
 
   const currComponent = (component) => {
-    console.log("Our current component is:", component);
+    // console.log("Our current component is:", component);
     switch (component) {
       case "profile":
         // console.log(component);
         return <Profile userID={userObject.user_id} />;
       case "dashboard":
-        console.log(component);
+        // console.log(component);
         return (
           <Dashboard
             currentDay={currentDay}
@@ -61,7 +88,7 @@ function App() {
           />
         );
       case "logsign":
-        console.log(component);
+        // console.log(component);
         return (
           <LogSignMain
             setUserObject={setUserObject}
@@ -69,7 +96,7 @@ function App() {
           />
         );
       case "calendar":
-        console.log(component);
+        // console.log(component);
         return (
           <CalendarPage
             currentDay={currentDay}
@@ -84,7 +111,8 @@ function App() {
   const test = 0;
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
+      <ThemeToggle />
       <Container maxWidth="lg">
         <Box
           sx={{
@@ -103,7 +131,7 @@ function App() {
           {currComponent(component)}
         </Box>
       </Container>
-    </>
+    </ThemeProvider>
   );
 }
 
