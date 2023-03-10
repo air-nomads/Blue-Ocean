@@ -26,8 +26,8 @@ function App() {
   const [loggedUser, setLoggedUser] = useState("");
   const [component, setComponent] = useState("logsign");
   const [currentDay, setCurrentDay] = useState(new Date());
-  // const [userID, setUserID] = useState(0);
   const [userObject, setUserObject] = useState({});
+  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     axios.get("http://localhost:3000/session").then((res) => {
@@ -44,21 +44,46 @@ function App() {
     });
   }, []);
 
-  const [darkMode, setDarkMode] = useState(false);
   const theme = createTheme({
     palette: {
-      mode: darkMode ? 'dark' : 'light',
-      primary: {
-        main: '#3f51b5',
+      mode: !darkMode ? 'light' : 'dark', // or 'dark'
+      light: {
+        primary: {
+        main: '#2196f3',
+        },
+        secondary: {
+          main: '#f50057',
+        },
+        background: {
+          default: '#fff',
+          paper: '#fafafa',
+        },
+        text: {
+          primary: '#212121',
+          secondary: '#757575',
+        },
       },
-      secondary: {
-        main: '#f50057',
+      // Dark mode values
+      dark: {
+        primary: {
+          main: '#90caf9',
+        },
+        secondary: {
+          main: '#ff4081',
+        },
+        background: {
+          default: '#212121',
+          paper: '#424242',
+        },
+        text: {
+          primary: '#fff',
+          secondary: '#e0e0e0',
+        },
       },
     },
-    // other properties as needed
   });
-  const ThemeToggle = () => {
 
+  const ThemeToggle = () => {
     const toggleTheme = () => {
       setDarkMode(!darkMode);
     };
@@ -116,7 +141,6 @@ function App() {
       <Container maxWidth="lg">
         <Box
           sx={{
-            bgcolor: "#cfe8fc",
             height: "100vh",
           }}
         >
